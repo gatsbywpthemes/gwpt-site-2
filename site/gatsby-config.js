@@ -23,6 +23,21 @@ module.exports = {
           process.env.NODE_ENV === 'development' ? '' : config.pathPrefix,
       },
     },
+    {
+      resolve: '@chakra-ui/gatsby-plugin',
+      options: {
+        /**
+         * @property {boolean} [isResettingCSS=true]
+         * if false, this plugin will not use `<CSSReset />
+         */
+        isResettingCSS: false,
+        /**
+         * @property {boolean} [isUsingColorMode=true]
+         * if false, this plugin will not use <ColorModeProvider />
+         */
+        isUsingColorMode: false,
+      },
+    },
     //   {
     //     resolve: `gatsby-plugin-cookiehub-banner`,
     //     options: {
