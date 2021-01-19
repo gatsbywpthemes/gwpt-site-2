@@ -60,9 +60,9 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
     : '/'
 
   Object.assign(mergedOptions, {
-    postsPerPage: data.wp.allSettings.readingSettingsPostsPerPage,
+    postsPerPage: data?.wp?.allSettings?.readingSettingsPostsPerPage,
     seoFromWP,
-    generalSeoSettings: data.wp.seo,
+    generalSeoSettings: data?.wp?.seo,
     postsPath,
   })
 
