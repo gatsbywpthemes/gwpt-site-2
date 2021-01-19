@@ -1,0 +1,34 @@
+{
+  "name": "@gatsbywpthemes/gatsby-plugin-wpcf7",
+  "description": "A Gatsby plugin that parser contact forms built with Contact Form 7.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "form",
+    "wordpress",
+    "wpgraphql",
+    "parser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pehaa/@gatsbywpthemes/gatsby-plugin-wpcf7.git"
+  },
+  "license": "LicenseRef-LICENSE",
+  "dependencies": {
+    "@mdx-js/react": "^1.6.22",
+    "html-react-parser": "^1.0.0",
+    "react-hook-form": "^6.13.1"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
+}

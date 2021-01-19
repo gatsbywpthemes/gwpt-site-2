@@ -1,0 +1,36 @@
+{
+  "name": "@gatsbywpthemes/gatsby-plugin-wordpress-lightbox",
+  "description": "A Gatsby plugin that adds Lightbox to galleries.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Paulina Hetman <info@pehaa.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "form",
+    "wordpress",
+    "wpgraphql",
+    "parser",
+    "fancybox",
+    "lightbox",
+    "gallery"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pehaa/@gatsbywpthemes/gatsby-plugin-wordpress-lightbox.git"
+  },
+  "license": "LicenseRef-LICENSE",
+  "dependencies": {
+    "html-react-parser": "^1.0.0",
+    "simple-react-lightbox": "3.3.4-2"
+  },
+  "peerDependencies": {
+    "gatsby": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "gitHead": "40b579e6c7c310fff0a8568136e33e1f8a1221c4"
+}
