@@ -1,6 +1,18 @@
 /** @jsx jsx */
-import { jsx, Box, Container } from 'theme-ui'
+
+import { jsx, Container } from 'theme-ui'
+import React from 'react'
 import { graphql } from 'gatsby'
+import {
+  Stack,
+  Box,
+  Tooltip,
+  List,
+  ListItem,
+  ListIcon,
+  chakra,
+} from '@chakra-ui/react'
+
 import Button from './Button'
 import ParsedContent from '../../utils/ParsedContent'
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
@@ -49,7 +61,78 @@ export const PricingBlock = ({
       {...props}
     >
       <Container className="container">
-        <h1>Pricing Tables</h1>
+        <Stack
+          spacing="100px"
+          direction={['column', 'row']}
+          justifyContent="center"
+        >
+          {pricingTables?.map((pricingTable, i) => {
+            const {
+              title,
+              price,
+              description,
+              features,
+              buyLink,
+            } = pricingTable
+            const packClass = title.includes('Core') ? 'core' : 'pro'
+            const bgGradient = title.includes('Core')
+              ? 'linear(to-r, primary, secondary)'
+              : 'linear(to-r, yellow, pink)'
+            return (
+              <Box
+                key={i}
+                className={`${packClass} p-6 rounded-md text-center pb-10`}
+                bgGradient={bgGradient}
+                w={400}
+              >
+                <Box
+                  className="py-4 pricingHeader"
+                  sx={{ borderBottom: '1px dashed #ddd' }}
+                >
+                  <Tooltip
+                    hasArrow
+                    label={description}
+                    placement="top"
+                    width={300}
+                    p="20px"
+                  >
+                    <h3 className="text-center text-white underline uppercase">
+                      {title}
+                    </h3>
+                  </Tooltip>
+                  <Box className="text-3xl font-bold">
+                    {price}$<span className="text-lg font-light">/Year</span>
+                  </Box>
+                </Box>
+                <List pt={6}>
+                  {features?.map((feature) => {
+                    const { title, tooltip } = feature
+
+                    return (
+                      <ListItem
+                        className={`py-2 text-base font-semibold uppercase ${
+                          tooltip && 'underline'
+                        }`}
+                      >
+                        <Tooltip width={300} p={4} hasArrow label={tooltip}>
+                          {title}
+                        </Tooltip>
+                      </ListItem>
+                    )
+                  })}
+                </List>
+                <chakra.a
+                  href={buyLink}
+                  target="_blank"
+                  className="px-8 py-2 mt-10 text-base text-white uppercase rounded-full shadow-2xl"
+                  bgGradient={bgGradient}
+                >
+                  Buy Now
+                </chakra.a>
+              </Box>
+            )
+          })}
+        </Stack>
       </Container>
     </Box>
   )
