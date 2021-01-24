@@ -23,7 +23,7 @@ export const pageQuery = graphql`
           ...columnsBlockFragment
           ...testimonialsBlockFragment
           ...subscribeBlockFragment
-          ...pricingBlockFragment
+          # ...pricingBlockFragment
         }
       }
       featuredImage {
