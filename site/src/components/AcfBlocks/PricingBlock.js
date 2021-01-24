@@ -107,7 +107,7 @@ export const PricingBlock = ({
                         {title}
                       </h3>
                     </Tooltip>
-                    <Box className="text-3xl font-bold">
+                    <Box className="text-3xl font-bold text-white">
                       {price}$<span className="text-lg font-light">/Year</span>
                     </Box>
                   </Box>
@@ -117,7 +117,7 @@ export const PricingBlock = ({
 
                       return (
                         <ListItem
-                          className={`py-2 text-base font-semibold uppercase ${
+                          className={`py-2 text-base font-semibold uppercase text-white ${
                             tooltip && 'underline'
                           }`}
                         >
