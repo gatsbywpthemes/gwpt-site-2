@@ -13,7 +13,7 @@ import {
   ColumnsBlock,
   TestimonialsBlock,
   SubscribeBlock,
-  // PricingBlock,
+  PricingBlock,
 } from '../AcfBlocks'
 
 const Page = ({ page, ctx }) => {
@@ -66,8 +66,8 @@ const Page = ({ page, ctx }) => {
                 return <TestimonialsBlock {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_SubscribeBlock':
                 return <SubscribeBlock {...block} />
-              // case 'WpPage_Flexlayouts_FlexibleLayouts_PricingBlock':
-              //   return <PricingBlock {...block} />
+              case 'WpPage_Flexlayouts_FlexibleLayouts_PricingBlock':
+                return <PricingBlock {...block} />
 
               default:
                 return ''
