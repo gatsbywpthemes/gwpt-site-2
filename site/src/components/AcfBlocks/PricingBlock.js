@@ -14,8 +14,6 @@ import {
   chakra,
 } from '@chakra-ui/react'
 
-import Button from './Button'
-import ParsedContent from '../../utils/ParsedContent'
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
 export const fragment = graphql`
@@ -64,7 +62,7 @@ export const PricingBlock = ({
       <Container className="container">
         <Stack
           spacing="100px"
-          direction={['column', 'row']}
+          direction={['column', 'column', 'column', 'row']}
           justifyContent="center"
         >
           {pricingTables?.map((pricingTable, i) => {
@@ -77,14 +75,15 @@ export const PricingBlock = ({
             } = pricingTable
             const packClass = title.includes('Core') ? 'core' : 'pro'
             const bgGradient = title.includes('Core')
-              ? 'linear(to-r, primary, secondary)'
-              : 'linear(to-r, yellow, pink)'
+              ? 'linear(to-t, primary, secondary)'
+              : 'linear(to-t, pink, yellow)'
+
             return (
               <Box
                 key={i}
                 className={`${packClass} p-6 rounded-md text-center pb-16`}
                 bgGradient={bgGradient}
-                w={400}
+                w={['100%', '100%', '100%', 400]}
               >
                 <VStack
                   spacing="10px"
@@ -93,6 +92,7 @@ export const PricingBlock = ({
                 >
                   <Box
                     className="py-4 pb-10 pricingHeader"
+                    // textShadow="2px 2px 8px #777"
                     w="100%"
                     sx={{ borderBottom: '1px dashed #ddd' }}
                   >
@@ -102,8 +102,9 @@ export const PricingBlock = ({
                       placement="top"
                       width={300}
                       p="20px"
+                      bg="dark"
                     >
-                      <h3 className="text-center text-white underline uppercase">
+                      <h3 className="text-center text-white underline uppercase cursor-pointer">
                         {title}
                       </h3>
                     </Tooltip>
@@ -118,11 +119,17 @@ export const PricingBlock = ({
                       return (
                         <ListItem
                           className={`py-2 text-base font-semibold uppercase text-white ${
-                            tooltip && 'underline'
+                            tooltip && 'underline cursor-pointer'
                           }`}
                         >
-                          <Tooltip width={300} p={4} hasArrow label={tooltip}>
-                            {title}
+                          <Tooltip
+                            width={300}
+                            p={4}
+                            bg="dark"
+                            hasArrow
+                            label={tooltip}
+                          >
+                            <Box textShadow="3px 3px 15px #999">{title}</Box>
                           </Tooltip>
                         </ListItem>
                       )
@@ -132,8 +139,11 @@ export const PricingBlock = ({
                     <chakra.a
                       href={buyLink}
                       target="_blank"
-                      className="px-8 py-2 mt-10 text-base text-white uppercase rounded-full shadow-2xl"
+                      className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg hover:shadow-2xl px-9 hover:text-white"
                       bgGradient={bgGradient}
+                      _hover={{
+                        transform: 'translateY(-3px) scale(1.02)',
+                      }}
                     >
                       Buy Now
                     </chakra.a>
