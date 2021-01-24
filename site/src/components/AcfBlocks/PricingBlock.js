@@ -1,10 +1,11 @@
 /** @jsx jsx */
 
-import { jsx, Container } from 'theme-ui'
+import { jsx, Container, Flex } from 'theme-ui'
 import React from 'react'
 import { graphql } from 'gatsby'
 import {
   Stack,
+  VStack,
   Box,
   Tooltip,
   List,
@@ -81,54 +82,63 @@ export const PricingBlock = ({
             return (
               <Box
                 key={i}
-                className={`${packClass} p-6 rounded-md text-center pb-10`}
+                className={`${packClass} p-6 rounded-md text-center pb-16`}
                 bgGradient={bgGradient}
                 w={400}
               >
-                <Box
-                  className="py-4 pricingHeader"
-                  sx={{ borderBottom: '1px dashed #ddd' }}
+                <VStack
+                  spacing="10px"
+                  justifyContent="space-between"
+                  height="100%"
                 >
-                  <Tooltip
-                    hasArrow
-                    label={description}
-                    placement="top"
-                    width={300}
-                    p="20px"
+                  <Box
+                    className="py-4 pb-10 pricingHeader"
+                    w="100%"
+                    sx={{ borderBottom: '1px dashed #ddd' }}
                   >
-                    <h3 className="text-center text-white underline uppercase">
-                      {title}
-                    </h3>
-                  </Tooltip>
-                  <Box className="text-3xl font-bold">
-                    {price}$<span className="text-lg font-light">/Year</span>
+                    <Tooltip
+                      hasArrow
+                      label={description}
+                      placement="top"
+                      width={300}
+                      p="20px"
+                    >
+                      <h3 className="text-center text-white underline uppercase">
+                        {title}
+                      </h3>
+                    </Tooltip>
+                    <Box className="text-3xl font-bold">
+                      {price}$<span className="text-lg font-light">/Year</span>
+                    </Box>
                   </Box>
-                </Box>
-                <List pt={6}>
-                  {features?.map((feature) => {
-                    const { title, tooltip } = feature
+                  <List pt={6}>
+                    {features?.map((feature) => {
+                      const { title, tooltip } = feature
 
-                    return (
-                      <ListItem
-                        className={`py-2 text-base font-semibold uppercase ${
-                          tooltip && 'underline'
-                        }`}
-                      >
-                        <Tooltip width={300} p={4} hasArrow label={tooltip}>
-                          {title}
-                        </Tooltip>
-                      </ListItem>
-                    )
-                  })}
-                </List>
-                <chakra.a
-                  href={buyLink}
-                  target="_blank"
-                  className="px-8 py-2 mt-10 text-base text-white uppercase rounded-full shadow-2xl"
-                  bgGradient={bgGradient}
-                >
-                  Buy Now
-                </chakra.a>
+                      return (
+                        <ListItem
+                          className={`py-2 text-base font-semibold uppercase ${
+                            tooltip && 'underline'
+                          }`}
+                        >
+                          <Tooltip width={300} p={4} hasArrow label={tooltip}>
+                            {title}
+                          </Tooltip>
+                        </ListItem>
+                      )
+                    })}
+                  </List>
+                  <Box>
+                    <chakra.a
+                      href={buyLink}
+                      target="_blank"
+                      className="px-8 py-2 mt-10 text-base text-white uppercase rounded-full shadow-2xl"
+                      bgGradient={bgGradient}
+                    >
+                      Buy Now
+                    </chakra.a>
+                  </Box>
+                </VStack>
               </Box>
             )
           })}
