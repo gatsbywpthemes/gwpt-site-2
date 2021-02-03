@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { jsx, Container, Flex } from 'theme-ui'
+import { jsx, Container } from 'theme-ui'
 import React from 'react'
 import { graphql } from 'gatsby'
 import {
@@ -10,7 +10,6 @@ import {
   Tooltip,
   List,
   ListItem,
-  ListIcon,
   chakra,
 } from '@chakra-ui/react'
 
@@ -56,10 +55,21 @@ export const PricingBlock = ({
       sx={{
         ...margins,
         ...sectionsStyles,
+        '.container': {
+          bg: ['transparent', 'transparent', 'transparent', 'cardBg'],
+          py: [20, 40, 80],
+          px: [0, 20, 40],
+          maxWidth: 1100,
+          boxShadow: ['none', 'none', 'none', 'small'],
+          borderRadius: 30,
+        },
       }}
       {...props}
     >
-      <Container className="container">
+      <Container
+        className="container"
+        bg={['transparent', 'transparent', 'cardBg']}
+      >
         <Stack
           spacing="100px"
           direction={['column', 'column', 'column', 'row']}
@@ -81,7 +91,7 @@ export const PricingBlock = ({
             return (
               <Box
                 key={i}
-                className={`${packClass} p-6 rounded-md text-center pb-16`}
+                className={`${packClass} p-6 rounded-lg text-center pb-16`}
                 bgGradient={bgGradient}
                 w={['100%', '100%', '100%', 400]}
               >
