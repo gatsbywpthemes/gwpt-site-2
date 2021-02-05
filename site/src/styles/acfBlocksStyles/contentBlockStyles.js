@@ -1,7 +1,7 @@
 export default {
   color: 'text',
   px: [20, 30, 0],
-  '&.aboutSection': {
+  '&.aboutSection, &.pricing-intro': {
     p: {
       fontSize: 20,
     },
