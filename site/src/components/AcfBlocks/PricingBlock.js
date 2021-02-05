@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container } from 'theme-ui'
+/** @jsx jsx */
+import { Container, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import {
   Stack,

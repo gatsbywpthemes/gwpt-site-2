@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container } from 'theme-ui'
+/** @jsx jsx */
+import { Container, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
 import {
   Box,
@@ -9,6 +9,7 @@ import {
   AccordionPanel,
   AccordionIcon,
   chakra,
+  useColorModeValue,
 } from '@chakra-ui/react'
 
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
@@ -62,13 +63,29 @@ export const AccordionBlock = ({
         className="container"
         bg={['transparent', 'transparent', 'cardBg']}
       >
-        <Accordion>
+        <Accordion defaultIndex={[0]} allowMultiple>
           {faq?.map((item, i) => {
             const { question, answer } = item
+
             return (
               <AccordionItem key={i}>
-                <AccordionButton>{question}</AccordionButton>
-                <AccordionPanel>{answer}</AccordionPanel>
+                <AccordionButton
+                  border="none"
+                  bg="transparent"
+                  borderBottom="1px dotted"
+                  borderColor="#999"
+                  py={4}
+                  className="font-bold uppercase"
+                  sx={{ color: 'pink' }}
+                >
+                  <Box flex="1" textAlign="left">
+                    {question}
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel sx={{ color: 'text' }} py={5}>
+                  {answer}
+                </AccordionPanel>
               </AccordionItem>
             )
           })}
