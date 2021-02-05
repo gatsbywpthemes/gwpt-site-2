@@ -50,7 +50,8 @@ export const AccordionBlock = ({
         ...sectionsStyles,
         '.container': {
           bg: ['transparent', 'transparent', 'transparent', 'cardBg'],
-          py: [20, 40, 80],
+          pb: [20, 40, 80],
+          pt: [10, 30, 40],
           px: [0, 20, 40],
           maxWidth: 1100,
           boxShadow: ['none', 'none', 'none', 'small'],
@@ -75,15 +76,22 @@ export const AccordionBlock = ({
                   borderBottom="1px dotted"
                   borderColor="#999"
                   py={4}
-                  className="font-bold uppercase"
-                  sx={{ color: 'pink' }}
+                  className="mt-4 font-bold uppercase transition-all cursor-pointer rounded-t-md hover:text-secondary focus:text-secondary"
+                  sx={{
+                    color: 'text',
+                  }}
                 >
                   <Box flex="1" textAlign="left">
                     {question}
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
-                <AccordionPanel sx={{ color: 'text' }} py={5}>
+                <AccordionPanel
+                  className="text-lg font-semibold text-white rounded-b-lg "
+                  py={10}
+                  px={6}
+                  bgGradient="linear(to-r,primary, secondary)"
+                >
                   {answer}
                 </AccordionPanel>
               </AccordionItem>
