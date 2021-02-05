@@ -24,6 +24,7 @@ export const pageQuery = graphql`
           ...testimonialsBlockFragment
           ...subscribeBlockFragment
           ...pricingBlockFragment
+          ...accordionBlockFragment
         }
       }
       featuredImage {
