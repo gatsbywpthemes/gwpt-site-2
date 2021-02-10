@@ -19,9 +19,9 @@ export const pageQuery = graphql`
           ...imageBlockFragment
           ...headingBlockFragment
           ...buttonBlockFragment
-          ...coverBlockFragment
+          # ...coverBlockFragment
           ...columnsBlockFragment
-          ...testimonialsBlockFragment
+          # ...testimonialsBlockFragment
           ...subscribeBlockFragment
           ...pricingBlockFragment
           ...accordionBlockFragment

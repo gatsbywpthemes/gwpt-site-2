@@ -2,7 +2,7 @@
 import { jsx, Box, Container, Grid, Flex } from 'theme-ui'
 import { graphql } from 'gatsby'
 import ParsedContent from '../../utils/ParsedContent'
-import BgImage from '../images/BgImage'
+
 import columnsBlockStyles from '../../styles/acfBlocksStyles/columnsBlockStyles'
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 import { ContentButton as Button } from './Button'
@@ -125,51 +125,32 @@ export const ColumnsBlock = ({
                       <img src={icon.publicURL} alt={icon.altText} />
                     </Flex>
                   )}
-                  {image ? (
-                    <BgImage
-                      img={image}
-                      sx={{
-                        px: columnHorizontalPadding,
-                        py: columnVerticalPadding,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                      }}
-                    >
-                      {columnContent && (
-                        <ParsedContent
-                          className="content"
-                          content={columnContent}
+
+                  <Box
+                    sx={{
+                      px: columnHorizontalPadding,
+                      py: columnVerticalPadding,
+                    }}
+                  >
+                    {columnContent && (
+                      <Box
+                        sx={{
+                          px: columnHorizontalPadding,
+                          py: columnVerticalPadding,
+                          // display: 'flex',
+                          // flexDirection: 'column',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                        }}
+                      >
+                        <div
+                          className="columnContent"
+                          dangerouslySetInnerHTML={{ __html: columnContent }}
                         />
-                      )}
-                      {button && <Button button={button} />}
-                    </BgImage>
-                  ) : (
-                    <Box
-                      sx={{
-                        px: columnHorizontalPadding,
-                        py: columnVerticalPadding,
-                      }}
-                    >
-                      {columnContent && (
-                        <Box
-                          sx={{
-                            px: columnHorizontalPadding,
-                            py: columnVerticalPadding,
-                            // display: 'flex',
-                            // flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                          }}
-                        >
-                          <div
-                            className="columnContent"
-                            dangerouslySetInnerHTML={{ __html: columnContent }}
-                          />
-                          {button && <Button button={button} />}
-                        </Box>
-                      )}
-                    </Box>
-                  )}
+                        {button && <Button button={button} />}
+                      </Box>
+                    )}
+                  </Box>
                 </Box>
               )
             })}

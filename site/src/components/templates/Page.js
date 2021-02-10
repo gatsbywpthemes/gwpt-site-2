@@ -9,9 +9,7 @@ import {
   HeadingBlock,
   ImageBlock,
   ProjectsBlock,
-  CoverBlock,
   ColumnsBlock,
-  TestimonialsBlock,
   SubscribeBlock,
   PricingBlock,
   AccordionBlock,
@@ -59,12 +57,10 @@ const Page = ({ page, ctx }) => {
                 return <ButtonBlock {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_ProjectsBlock':
                 return <ProjectsBlock {...block} />
-              case 'WpPage_Flexlayouts_FlexibleLayouts_CoverBlock':
-                return <CoverBlock {...block} />
+
               case 'WpPage_Flexlayouts_FlexibleLayouts_ColumnsBlock':
                 return <ColumnsBlock {...block} />
-              case 'WpPage_Flexlayouts_FlexibleLayouts_TestimonialsBlock':
-                return <TestimonialsBlock {...block} />
+
               case 'WpPage_Flexlayouts_FlexibleLayouts_SubscribeBlock':
                 return <SubscribeBlock {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_PricingBlock':

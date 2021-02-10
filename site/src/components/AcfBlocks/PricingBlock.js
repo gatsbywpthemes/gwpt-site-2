@@ -69,7 +69,7 @@ export const PricingBlock = ({
         bg={['transparent', 'transparent', 'cardBg']}
       >
         <Stack
-          spacing="100px"
+          spacing="50px"
           direction={['column', 'column', 'column', 'row']}
           justifyContent="center"
         >
@@ -91,7 +91,7 @@ export const PricingBlock = ({
                 key={i}
                 className={`${packClass} p-6 rounded-lg text-center pb-16`}
                 bgGradient={bgGradient}
-                w={['100%', '100%', '100%', 400]}
+                w={['100%', '100%', '100%', 450]}
               >
                 <VStack
                   spacing="10px"
