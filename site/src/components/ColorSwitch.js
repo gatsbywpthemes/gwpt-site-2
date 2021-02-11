@@ -14,7 +14,14 @@ export const ColorSwitch = ({ ...props }) => {
       }
       {...props}
     >
-      <Box sx={{ color: 'light', mt: 8, cursor: 'pointer' }}>
+      <Box
+        sx={{
+          color: 'light',
+          mt: [8, 45, 8],
+
+          cursor: 'pointer',
+        }}
+      >
         {colorMode === 'light' ? (
           <Icon size={36} icon={moon} />
         ) : (

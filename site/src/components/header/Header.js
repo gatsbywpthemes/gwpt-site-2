@@ -72,7 +72,7 @@ export const Header = () => {
         <Menu
           menuName="main"
           orientation="horizontal"
-          sx={{ display: ['none', 'block', 'block'] }}
+          sx={{ display: ['none', 'block', 'block'], mr: [0, 20, 0] }}
         />
       </Container>
 
