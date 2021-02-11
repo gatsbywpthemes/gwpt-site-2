@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
 import { useStaticQuery, graphql } from 'gatsby'
-import { SiteBranding } from './index'
+import { SiteBranding, SlideSidebar } from './index'
 import { useThemeOptions } from '@gatsbywpthemes/gatsby-theme-blog-data/src/hooks'
 import { ColorSwitch } from '../index'
 import { Menu } from './Menu'
@@ -59,21 +59,28 @@ export const Header = () => {
           }}
         />
 
-        {/* <SlideSidebar
+        <SlideSidebar
           sx={{
-            width: [`50%`, `50%`, `33%`],
-            display: `flex`,
+            // width: [`50%`, `50%`, `33%`],
+            display: [`flex`, `none`, `none`],
             justifyContent: `flex-end`,
+            position: 'relative',
+            top: -70,
+            right: -10,
           }}
-        /> */}
-        <Menu menuName="main" orientation="horizontal" />
+        />
+        <Menu
+          menuName="main"
+          orientation="horizontal"
+          sx={{ display: ['none', 'block', 'block'] }}
+        />
       </Container>
 
       <ColorSwitch
         sx={{
           position: `absolute`,
           right: [`6%`, `6%`, `2%`],
-          top: [15, 15, 25],
+          top: [15, 15, 50],
           '.headroom--pinned &': {
             top: [10, 10, 15],
           },
