@@ -11,7 +11,7 @@ export const SiteBranding = ({ title, ...props }) => {
   return (
     <>
       {logo ? (
-        <Logo />
+        <Logo className="logo" {...props} />
       ) : (
         <h1
           sx={{

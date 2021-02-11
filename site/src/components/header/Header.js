@@ -34,9 +34,8 @@ export const Header = () => {
         bg: 'transparent',
         backgroundImage: `url(${blueWaveTop})`,
         backgroundSize: 'cover',
-        // backgroundPositionY: -100,
 
-        height: ['auto', '17vw'],
+        height: ['auto', 'auto', '17vw'],
       }}
     >
       <Container className="container">
@@ -55,6 +54,7 @@ export const Header = () => {
           sx={{
             width: [`50%`, `100%`, `auto`],
             display: `flex`,
+
             ...styles,
           }}
         />
@@ -80,7 +80,7 @@ export const Header = () => {
         sx={{
           position: `absolute`,
           right: [`6%`, `6%`, `2%`],
-          top: [15, 15, 50],
+          top: [60, 15, 50],
           '.headroom--pinned &': {
             top: [10, 10, 15],
           },

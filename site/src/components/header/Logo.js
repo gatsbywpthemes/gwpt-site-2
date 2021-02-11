@@ -8,7 +8,17 @@ export const Logo = () => {
   const { logo } = useThemeOptions()
   return (
     <Link to="/" rel="home">
-      <img width="72" src={withPrefix(logo)} alt="logo" sx={{ mb: 0 }} />
+      <img
+        width="72"
+        src={withPrefix(logo)}
+        alt="logo"
+        sx={{
+          mb: 0,
+          ml: [0, 40, 0],
+          mt: [0, -10, 0],
+          maxWidth: ['50px', '70%', '100%'],
+        }}
+      />
     </Link>
   )
 }
