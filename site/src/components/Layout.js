@@ -40,7 +40,7 @@ export const Layout = ({ children, page, type = 'page' }) => {
             py: `xxl`,
             '.fullWidth &': {
               py: 0,
-              mt: -32,
+              // mt: -32,
             },
           }}
         >

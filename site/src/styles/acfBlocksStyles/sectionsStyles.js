@@ -1,5 +1,8 @@
 export default {
-  my: 60,
+  my: [60],
+  '&:first-of-type': {
+    mt: [0, 0, 60],
+  },
 
   // '&:nth-child(even)': {
   //   bg: 'light',
