@@ -69,6 +69,12 @@ module.exports = {
         pathPrefix: config.pathPrefix,
       },
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '442309317125206',
+      },
+    },
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',

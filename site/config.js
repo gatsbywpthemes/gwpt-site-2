@@ -5,7 +5,7 @@ const config = {
   menuName: 'main',
   // addWordPressComments: 1,
   ga4TrackingId: 'G-SYKETXV5ML',
-  // googleTagManagerId: 0,
+  googleTagManagerId: 'GTM-TQDF4VK',
   // addSiteMap: false,
   // siteMapOptions: {},
 
