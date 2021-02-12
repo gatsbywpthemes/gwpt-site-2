@@ -1,11 +1,14 @@
 const config = require('./config')
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
     title: 'Gatsby theme WordPress Starter Demo',
     description: 'Gatsby starter site for Gatsby Theme Wordpress Theme.',
     author: '@alexadark',
-    wordPressUrl: config.wordpressUrl,
+    wordPressUrl: process.env.GATSBY_WP_URL,
     siteUrl: config.siteUrl,
     social: [
       {
@@ -110,8 +113,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-        endpoint:
-          'https://gmail.us20.list-manage.com/subscribe/post?u=264367957087f30a2e5e30279&amp;id=338936df19',
+        endpoint: process.env.GATSBY_MAILCHIMP_ENDPOINT,
       },
     },
   ],
