@@ -3,7 +3,7 @@ const parts = ['container', 'button', 'panel']
 const baseStyleContainer = {
   borderTopWidth: '1px',
   borderColor: 'inherit',
-  bg: 'red',
+
   _last: {
     borderBottomWidth: '1px',
   },
@@ -11,7 +11,6 @@ const baseStyleContainer = {
 
 const baseStyleButton = {
   fontSize: '1rem',
-  bg: 'red',
   _focus: {
     boxShadow: 'outline',
   },
