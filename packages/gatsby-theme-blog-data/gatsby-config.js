@@ -30,7 +30,7 @@ module.exports = (options) => {
     `gatsby-plugin-anchor-links`,
 
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `${url}/graphql`,
         verbose: true,
