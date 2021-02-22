@@ -42,6 +42,13 @@ module.exports = {
         isUsingColorMode: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-paddle`,
+      options: {
+        vendorId: '126819', // Find in your account settings.
+        debug: false, // Set true to start the debug mode.
+      },
+    },
     //   {
     //     resolve: `gatsby-plugin-cookiehub-banner`,
     //     options: {

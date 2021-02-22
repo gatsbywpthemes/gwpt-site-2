@@ -145,9 +145,10 @@ export const PricingBlock = ({
                   </List>
                   <Box>
                     <chakra.a
-                      href={buyLink}
+                      href="#!"
                       target="_blank"
-                      className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg hover:shadow-2xl px-9 hover:text-white"
+                      data-product="646326"
+                      className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg paddle_button hover:shadow-2xl px-9 hover:text-white"
                       bgGradient={bgGradient}
                       _hover={{
                         transform: 'translateY(-3px) scale(1.02)',
