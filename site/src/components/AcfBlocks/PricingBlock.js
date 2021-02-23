@@ -25,6 +25,7 @@ export const fragment = graphql`
       description
       price
       buyLink
+      productId
       features {
         title
         tooltip
@@ -47,9 +48,6 @@ export const PricingBlock = ({
   }
 
   const Paddle = window.Paddle
-  const openCheckout = () => {
-    Paddle.Checkout.open({ product: 646327 })
-  }
 
   return (
     <Box
@@ -86,12 +84,16 @@ export const PricingBlock = ({
               description,
               features,
               buyLink,
+              productId,
             } = pricingTable
             const packClass = title.includes('Core') ? 'core' : 'pro'
             const bgGradient = title.includes('Core')
               ? 'linear(to-t, primary, secondary)'
               : 'linear(to-t, pink, yellow)'
 
+            const openCheckout = () => {
+              Paddle.Checkout.open({ product: productId })
+            }
             return (
               <Box
                 key={i}
@@ -151,9 +153,9 @@ export const PricingBlock = ({
                   </List>
 
                   <Box
-                    data-product="646326"
                     onClick={openCheckout}
-                    className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg cursor-pointer hover:shadow-2xl px-9 hover:text-white"
+                    transition="all .4s ease-in-out"
+                    className="inline-block py-3 text-base font-bold text-white uppercase rounded-full shadow-lg cursor-pointer hover:shadow-2xl px-9 hover:text-white"
                     bgGradient={bgGradient}
                     _hover={{
                       transform: 'translateY(-3px) scale(1.02)',
