@@ -46,7 +46,7 @@ module.exports = {
       resolve: `gatsby-plugin-paddle`,
       options: {
         vendorId: '126819', // Find in your account settings.
-        debug: true, // Set true to start the debug mode.
+        debug: false, // Set true to start the debug mode.
       },
     },
     //   {
