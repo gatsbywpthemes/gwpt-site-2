@@ -10,6 +10,7 @@ import {
   ListItem,
   chakra,
 } from '@chakra-ui/react'
+import { window } from 'browser-monads'
 
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
@@ -43,6 +44,11 @@ export const PricingBlock = ({
   const margins = {
     mt: marginTop,
     mb: marginBottom,
+  }
+
+  const Paddle = window.Paddle
+  const openCheckout = () => {
+    Paddle.Checkout.open({ product: 646327 })
   }
 
   return (
@@ -143,19 +149,19 @@ export const PricingBlock = ({
                       )
                     })}
                   </List>
-                  <Box>
-                    <chakra.a
-                      href="#!"
-                      target="_blank"
-                      data-product="646326"
-                      className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg paddle_button hover:shadow-2xl px-9 hover:text-white"
-                      bgGradient={bgGradient}
-                      _hover={{
-                        transform: 'translateY(-3px) scale(1.02)',
-                      }}
-                    >
-                      Buy Now
-                    </chakra.a>
+
+                  <Box
+                    data-product="646326"
+                    onClick={openCheckout}
+                    className="inline-block py-3 text-base text-white uppercase rounded-full shadow-lg cursor-pointer hover:shadow-2xl px-9 hover:text-white"
+                    bgGradient={bgGradient}
+                    _hover={{
+                      transform: 'translateY(-3px) scale(1.02)',
+                      boxShadow: '2xl',
+                      color: 'white',
+                    }}
+                  >
+                    Buy Now
                   </Box>
                 </VStack>
               </Box>
