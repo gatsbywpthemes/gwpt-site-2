@@ -1,6 +1,6 @@
 const config = {
-  // wordPressUrl: process.env.GATSBY_WP_URL,
-  wordPressUrl: 'https://gwpt-sales.gatsby-wp.com/',
+  wordPressUrl: process.env.GATSBY_WP_URL,
+  // wordPressUrl: 'https://gwpt-sales.gatsby-wp.com/',
   siteUrl: 'https://gatsbywpthemes.com/',
   logo: 'gatsby-wp-themes-logo-white.svg',
   menuName: 'main',
