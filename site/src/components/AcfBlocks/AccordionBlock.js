@@ -11,12 +11,15 @@ import {
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react'
+import ParsedContent from '../../utils/ParsedContent'
 
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
 export const fragment = graphql`
   fragment accordionBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_AccordionBlock {
     cssclass
+    title
+    content
     anchor
     marginTop
     marginBottom
@@ -29,6 +32,8 @@ export const fragment = graphql`
 
 export const AccordionBlock = ({
   faq,
+  title,
+  content,
   marginTop,
   marginBottom,
   cssclass,
@@ -64,6 +69,17 @@ export const AccordionBlock = ({
         className="container"
         bg={['transparent', 'transparent', 'cardBg']}
       >
+        {title && (
+          <h2
+            dangerouslySetInnerHTML={{ __html: title }}
+            className="text-center uppercase"
+          />
+        )}
+        {content && (
+          <Box className="intro">
+            <ParsedContent content={content} />
+          </Box>
+        )}
         <Accordion defaultIndex={[0]} allowMultiple>
           {faq?.map((item, i) => {
             const { question, answer } = item

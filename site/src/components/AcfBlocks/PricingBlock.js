@@ -11,6 +11,7 @@ import {
   chakra,
 } from '@chakra-ui/react'
 import { window } from 'browser-monads'
+import ParsedContent from '../../utils/ParsedContent'
 
 import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
@@ -20,6 +21,8 @@ export const fragment = graphql`
     anchor
     marginTop
     marginBottom
+    title
+    content
     pricingTables {
       title
       description
@@ -36,6 +39,8 @@ export const fragment = graphql`
 
 export const PricingBlock = ({
   pricingTables,
+  title,
+  content,
   marginTop,
   marginBottom,
   cssclass,
@@ -72,6 +77,17 @@ export const PricingBlock = ({
         className="container"
         bg={['transparent', 'transparent', 'cardBg']}
       >
+        {title && (
+          <h2
+            dangerouslySetInnerHTML={{ __html: title }}
+            className="text-center uppercase"
+          />
+        )}
+        {content && (
+          <Box className="intro" sx={{ color: 'text' }}>
+            <ParsedContent content={content} />
+          </Box>
+        )}
         <Stack
           spacing="50px"
           direction={['column', 'column', 'column', 'row']}
@@ -126,6 +142,7 @@ export const PricingBlock = ({
                     </Tooltip>
                     <Box className="text-3xl font-bold text-white">
                       {price}$<span className="text-lg font-light">/Year</span>
+                      <div className="text-sm">excl. VAT</div>
                     </Box>
                   </Box>
                   <List pt={6}>

@@ -29,6 +29,7 @@ export const Footer = () => (
       >
         <Link to="/terms-and-conditions">Terms & Conditions</Link>
         <Link to="/privacy-policy">Privacy Policy</Link>
+        <a href="mailto:contact@gatsbywpthemes.com">Contact Us</a>
       </Flex>
     </Container>
   </footer>
