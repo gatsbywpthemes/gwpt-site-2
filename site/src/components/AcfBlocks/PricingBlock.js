@@ -110,7 +110,6 @@ export const PricingBlock = ({
             const openCheckout = () => {
               Paddle.Checkout.open({
                 product: productId,
-                prices: [`USD:${price}`, `USD:400`],
               })
             }
             return (
