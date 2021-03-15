@@ -108,7 +108,10 @@ export const PricingBlock = ({
               : 'linear(to-t, pink, yellow)'
 
             const openCheckout = () => {
-              Paddle.Checkout.open({ product: productId })
+              Paddle.Checkout.open({
+                product: productId,
+                prices: [`USD:${price}`, `USD:400`],
+              })
             }
             return (
               <Box
