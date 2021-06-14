@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from 'react'
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import { Header } from './header'
