@@ -7,8 +7,8 @@ const config = {
   logo: 'gatsby-wp-themes-logo-white.svg',
   menuName: 'main',
   // addWordPressComments: 1,
-  ga4TrackingId: 'G-SYKETXV5ML',
-  googleTagManagerId: 'GTM-TQDF4VK',
+  ga4TrackingId: process.env.GATSBY_GA4_ID || 'G-SYKETXV5ML',
+  //googleTagManagerId: 'GTM-TQDF4VK',
   // addSiteMap: false,
   // siteMapOptions: {},
 
