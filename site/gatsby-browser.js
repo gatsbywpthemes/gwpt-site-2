@@ -6,9 +6,6 @@ const React = require('react')
 const Wrapper = (props) => {
   React.useEffect(() => {
     console.log('wrapper useeffect')
-    if (window.Cookiebot === undefined) {
-      return
-    }
     window.addEventListener(
       'CookiebotOnTagsExecuted',
       function (e) {
