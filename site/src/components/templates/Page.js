@@ -20,7 +20,7 @@ const Page = ({ page, ctx }) => {
     title,
     isFrontPage,
     uri,
-
+    slug,
     flexLayouts: { flexibleLayouts },
   } = page
 
@@ -72,6 +72,15 @@ const Page = ({ page, ctx }) => {
                 return ''
             }
           })}
+
+        {slug === 'privacy-policy' && (
+          <script
+            id="CookieDeclaration"
+            src="https://consent.cookiebot.com/b49b1a5f-acd1-49de-b4b0-6668ec151bf7/cd.js"
+            type="text/javascript"
+            async
+          ></script>
+        )}
       </Container>
     </Layout>
   )

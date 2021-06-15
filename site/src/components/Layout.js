@@ -59,12 +59,6 @@ export const Layout = ({ children, page, type = 'page' }) => {
             <Fragment>{children}</Fragment>
           </main>
           <Footer />
-          <script
-            id="CookieDeclaration"
-            src="https://consent.cookiebot.com/b49b1a5f-acd1-49de-b4b0-6668ec151bf7/cd.js"
-            type="text/javascript"
-            async
-          ></script>
         </Box>
       </Grommet>
     </>
