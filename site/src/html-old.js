@@ -15,7 +15,7 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            function CookiebotCallback_OnTagsExecuted() {
+            function CookiebotCallback_OnAccept() {
   console.log('here', window.Cookiebot.consent)
   if (window.Cookiebot.consent.statistics) {
     //Execute code that sets statistics cookies
