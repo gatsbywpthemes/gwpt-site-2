@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import { Header } from './header'
@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'
 
 import '../styles/scss/styles.scss'
 
-export const Layout = ({ children, page, type = 'page' }) => {
+export const Layout = ({ children, page, type = 'page', location }) => {
   const layoutClass = page !== undefined ? (page.slug ? page.slug : page) : ''
 
   const { theme } = useThemeUI()
@@ -20,6 +20,26 @@ export const Layout = ({ children, page, type = 'page' }) => {
 
   const fullWidthClass =
     pageTemplate === 'WpFullWidthTemplate' ? 'fullWidth' : ''
+
+  useEffect(() => {
+    if (window.Cookiebot === undefined) {
+      return
+    }
+    window.addEventListener(
+      'CookiebotOnTagsExecuted',
+      function (e) {
+        console.log(window.Cookiebot.consent)
+        if (window.Cookiebot.consent.statistics) {
+          //Execute code that sets marketing cookies
+          const pagePath = location
+            ? location.pathname + location.search + location.hash
+            : undefined
+          window.gtag(`event`, `page_view`, { page_path: pagePath })
+        }
+      },
+      false
+    )
+  }, [])
 
   return (
     <>

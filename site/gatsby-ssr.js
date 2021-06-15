@@ -2,6 +2,7 @@ require('typeface-titillium-web')
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
   const headComponents = getHeadComponents()
+  console.log(headComponents)
   /*headComponents.sort((x, y) => {
     if (x.props && x.props['data-blockingmode'] === 'auto') {
       return -1

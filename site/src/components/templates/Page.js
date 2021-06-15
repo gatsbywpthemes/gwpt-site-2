@@ -17,7 +17,7 @@ import {
 } from '../AcfBlocks'
 import { SimpleContentBlock } from '../ContentBlock'
 
-const Page = ({ page, ctx }) => {
+const Page = ({ page, ctx, location }) => {
   const {
     title,
     isFrontPage,
@@ -40,8 +40,9 @@ const Page = ({ page, ctx }) => {
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
   return (
-    <Layout page={page} type="page">
+    <Layout page={page} type="page" location={location}>
       <Seo
+        location={location}
         isFrontPage={isFrontPage}
         title={title}
         uri={uri}
