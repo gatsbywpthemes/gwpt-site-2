@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { useEffect, useRef } from 'react'
-import { jsx, Container, Box } from 'theme-ui'
+import { jsx, Container } from 'theme-ui'
 import { Layout } from '../Layout'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 
@@ -15,6 +15,7 @@ import {
   PricingBlock,
   AccordionBlock,
 } from '../AcfBlocks'
+import { SimpleContentBlock } from '../ContentBlock'
 
 const Page = ({ page, ctx }) => {
   const {
@@ -85,7 +86,14 @@ const Page = ({ page, ctx }) => {
             }
           })}
 
-        {slug === 'privacy-policy' && <div ref={cookiesRef} />}
+        {slug === 'privacy-policy' && (
+          <SimpleContentBlock
+            title="Cookie Policy and Details"
+            anchor="cookie-details"
+          >
+            <div ref={cookiesRef} />
+          </SimpleContentBlock>
+        )}
       </Container>
     </Layout>
   )
