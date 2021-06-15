@@ -10,5 +10,12 @@ exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
     }
     return 0
   })
-  replaceHeadComponents(headComponents)
+  const newHeadComponents = headComponents.map((el) => {
+    if (el.key?.startsWith('gatsby-plugin-google-gtag')) {
+      el.props.type = 'text/plain'
+      el.props['data-cookieconsent'] = 'statistics'
+    }
+    return el
+  })
+  replaceHeadComponents(newHeadComponents)
 }

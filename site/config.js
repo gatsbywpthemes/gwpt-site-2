@@ -8,6 +8,11 @@ const config = {
   menuName: 'main',
   // addWordPressComments: 1,
   ga4TrackingId: process.env.GATSBY_GA4_ID || 'G-SYKETXV5ML',
+  ga4Options: {
+    pluginConfig: {
+      head: true,
+    },
+  },
   //googleTagManagerId: 'GTM-TQDF4VK',
   // addSiteMap: false,
   // siteMapOptions: {},
