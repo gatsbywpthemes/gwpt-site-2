@@ -31,13 +31,6 @@ export const Layout = ({ children, page, type = 'page', location }) => {
           data-blockingmode="auto"
           type="text/javascript"
         ></script>
-        {/* <script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid="b49b1a5f-acd1-49de-b4b0-6668ec151bf7"
-          type="text/javascript"
-          async
-        ></script>*/}
       </Helmet>
       <Grommet theme={grommetStyles}>
         <Global styles={globalStyles(theme)} />
