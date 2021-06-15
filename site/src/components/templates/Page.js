@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { useEffect, useRef } from 'react'
 import { jsx, Container, Box } from 'theme-ui'
 import { Layout } from '../Layout'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
@@ -23,6 +24,17 @@ const Page = ({ page, ctx }) => {
     slug,
     flexLayouts: { flexibleLayouts },
   } = page
+  const cookiesRef = useRef(null)
+  useEffect(() => {
+    if (cookiesRef.current) {
+      const script = document.createElement('script')
+      script.id = 'CookieDeclaration'
+      script.async = true
+      script.src =
+        'https://consent.cookiebot.com/b49b1a5f-acd1-49de-b4b0-6668ec151bf7/cd.js'
+      cookiesRef.current.appendChild(script)
+    }
+  }, [])
 
   const featuredImage =
     page.featuredImage?.node.localFile.childImageSharp.original
@@ -73,14 +85,7 @@ const Page = ({ page, ctx }) => {
             }
           })}
 
-        {slug === 'privacy-policy' && (
-          <script
-            id="CookieDeclaration"
-            src="https://consent.cookiebot.com/b49b1a5f-acd1-49de-b4b0-6668ec151bf7/cd.js"
-            type="text/javascript"
-            async
-          ></script>
-        )}
+        {slug === 'privacy-policy' && <div ref={cookiesRef} />}
       </Container>
     </Layout>
   )
