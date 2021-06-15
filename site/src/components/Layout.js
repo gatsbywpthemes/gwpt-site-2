@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useEffect } from 'react'
+import React from 'react'
 import { jsx, Box, useThemeUI } from 'theme-ui'
 import { Fragment } from 'react'
 import { Header } from './header'
@@ -20,29 +20,6 @@ export const Layout = ({ children, page, type = 'page', location }) => {
 
   const fullWidthClass =
     pageTemplate === 'WpFullWidthTemplate' ? 'fullWidth' : ''
-
-  useEffect(() => {
-    if (window.Cookiebot === undefined) {
-      return
-    }
-    window.addEventListener(
-      'CookiebotOnTagsExecuted',
-      function (e) {
-        console.log(window.Cookiebot.consent)
-        if (window.Cookiebot.consent.statistics) {
-          //Execute code that sets statistics cookies
-          const pagePath = location
-            ? location.pathname + location.search + location.hash
-            : undefined
-          setTimeout(() => {
-            if (typeof window.gtag === 'function')
-              window.gtag(`event`, `page_view`, { page_path: pagePath })
-          }, 500)
-        }
-      },
-      false
-    )
-  }, [])
 
   return (
     <>
