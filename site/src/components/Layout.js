@@ -30,11 +30,14 @@ export const Layout = ({ children, page, type = 'page', location }) => {
       function (e) {
         console.log(window.Cookiebot.consent)
         if (window.Cookiebot.consent.statistics) {
-          //Execute code that sets marketing cookies
+          //Execute code that sets statistics cookies
           const pagePath = location
             ? location.pathname + location.search + location.hash
             : undefined
-          window.gtag(`event`, `page_view`, { page_path: pagePath })
+          setTimeout(() => {
+            if (typeof window.gtag === 'function')
+              window.gtag(`event`, `page_view`, { page_path: pagePath })
+          }, 500)
         }
       },
       false
