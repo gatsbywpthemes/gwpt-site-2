@@ -21,6 +21,7 @@ const Wrapper = (props) => {
               props.location.hash
             : undefined
           setTimeout(() => {
+            console.log(typeof window.gtag)
             if (typeof window.gtag === 'function')
               window.gtag(`event`, `page_view`, { page_path: pagePath })
           }, 500)
