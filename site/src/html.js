@@ -15,12 +15,14 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
+            console.log('define function')
             function CookiebotCallback_OnAccept() {
   console.log('here', window.Cookiebot.consent)
   if (window.Cookiebot.consent.statistics) {
     //Execute code that sets statistics cookies
 
     setTimeout(() => {
+      console.log(typeof window.gtag)
       if (typeof window.gtag === 'function')
         window.gtag("event", "page_view")
     }, 500)
