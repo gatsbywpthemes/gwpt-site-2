@@ -1,6 +1,6 @@
 require('typeface-titillium-web')
 require('./src/styles/tailwind.css')
-
+/*
 const React = require('react')
 
 const Wrapper = (props) => {
@@ -35,3 +35,4 @@ exports.wrapPageElement = ({ element, props }) => {
   // including location, data, etc - you don't need to pass it
   return <Wrapper {...props}>{element}</Wrapper>
 }
+*/
