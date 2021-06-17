@@ -45,7 +45,7 @@ export const Layout = ({ children, page, type = 'page', location }) => {
           }}
           className={`${layoutClass}-${type} ${fullWidthClass}`}
         >
-          <Header />
+          <Header location={location} />
 
           <main
             sx={{

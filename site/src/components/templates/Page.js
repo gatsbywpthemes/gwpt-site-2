@@ -58,28 +58,28 @@ const Page = ({ page, ctx, location }) => {
       <Container className="mainContainer">
         {flexibleLayouts &&
           flexibleLayouts.length > 0 &&
-          flexibleLayouts.map((block) => {
+          flexibleLayouts.map((block, index) => {
             switch (block?.__typename) {
               case 'WpPage_Flexlayouts_FlexibleLayouts_ContentBlock':
-                return <ContentBlock {...block} />
+                return <ContentBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_HeadingBlock':
-                return <HeadingBlock {...block} />
+                return <HeadingBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_ImageBlock':
-                return <ImageBlock {...block} />
+                return <ImageBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_ButtonBlock':
-                return <ButtonBlock {...block} />
+                return <ButtonBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_ProjectsBlock':
-                return <ProjectsBlock {...block} />
+                return <ProjectsBlock key={index} {...block} />
 
               case 'WpPage_Flexlayouts_FlexibleLayouts_ColumnsBlock':
-                return <ColumnsBlock {...block} />
+                return <ColumnsBlock key={index} {...block} />
 
               case 'WpPage_Flexlayouts_FlexibleLayouts_SubscribeBlock':
-                return <SubscribeBlock {...block} />
+                return <SubscribeBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_PricingBlock':
-                return <PricingBlock {...block} />
+                return <PricingBlock key={index} {...block} />
               case 'WpPage_Flexlayouts_FlexibleLayouts_AccordionBlock':
-                return <AccordionBlock {...block} />
+                return <AccordionBlock key={index} {...block} />
 
               default:
                 return ''

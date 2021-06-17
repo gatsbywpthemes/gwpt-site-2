@@ -1,8 +1,8 @@
 /** @jsx jsx */
-import { jsx, Heading, Container, Box } from "theme-ui"
-import { graphql } from "gatsby"
-import headingBlockStyles from "../../styles/acfBlocksStyles/headingBlockStyles"
-import sectionsStyles from "../../styles/acfBlocksStyles/sectionsStyles"
+import { jsx, Heading, Container, Box } from 'theme-ui'
+import { graphql } from 'gatsby'
+import headingBlockStyles from '../../styles/acfBlocksStyles/headingBlockStyles'
+import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
 export const fragment = graphql`
   fragment headingBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_HeadingBlock {
@@ -33,7 +33,7 @@ export const HeadingBlock = ({
   return (
     <Box
       id={anchor}
-      className={`${cssclass || ""} headingBlock`}
+      className={`${cssclass || ''} headingBlock`}
       sx={{ ...margins, ...sectionsStyles, ...headingBlockStyles }}
       {...props}
     >

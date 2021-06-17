@@ -1,15 +1,7 @@
 /** @jsx jsx */
 import { Container, jsx } from 'theme-ui'
 import { graphql } from 'gatsby'
-import {
-  Stack,
-  VStack,
-  Box,
-  Tooltip,
-  List,
-  ListItem,
-  chakra,
-} from '@chakra-ui/react'
+import { Stack, VStack, Box, Tooltip, List, ListItem } from '@chakra-ui/react'
 import { window } from 'browser-monads'
 import ParsedContent from '../../utils/ParsedContent'
 
@@ -99,7 +91,6 @@ export const PricingBlock = ({
               price,
               description,
               features,
-              buyLink,
               productId,
             } = pricingTable
             const packClass = title.includes('Core') ? 'core' : 'pro'
@@ -153,6 +144,7 @@ export const PricingBlock = ({
 
                       return (
                         <ListItem
+                          key={title}
                           className={`py-2 text-base font-semibold uppercase text-white ${
                             tooltip && 'underline cursor-pointer'
                           }`}

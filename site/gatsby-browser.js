@@ -4,6 +4,8 @@ require('./src/styles/tailwind.css')
 const React = require('react')
 
 const Wrapper = (props) => {
+  const locationRef = React.useRef(props.location)
+  console.log(locationRef)
   React.useEffect(() => {
     console.log('wrapper useeffect')
     window.addEventListener(
@@ -12,10 +14,10 @@ const Wrapper = (props) => {
         console.log(window.Cookiebot.consent)
         if (window.Cookiebot.consent.statistics) {
           //Execute code that sets statistics cookies
-          const pagePath = props.location
-            ? props.location.pathname +
-              props.location.search +
-              props.location.hash
+          const pagePath = locationRef.current
+            ? locationRef.currentn.pathname +
+              locationRef.current.search +
+              locationRef.current.hash
             : undefined
           setTimeout(() => {
             console.log(typeof window.gtag)

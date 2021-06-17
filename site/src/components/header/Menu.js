@@ -47,8 +47,8 @@ const renderLink = (menuItem, wordPressUrl, closeMenu) => {
       menuItem.url === wordPressUrl ? (
         <Link to="/" dangerouslySetInnerHTML={{ __html: menuItem.label }} />
       ) : menuItem.url.includes('#') ? (
-        <AnchorLink to={menuItem.url}>
-          <div onClick={closeMenu}>{menuItem.label}</div>
+        <AnchorLink to={menuItem.url} onAnchorLinkClick={closeMenu}>
+          {menuItem.label}
         </AnchorLink>
       ) : (
         <Link

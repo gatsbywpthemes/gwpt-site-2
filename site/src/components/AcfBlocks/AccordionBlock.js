@@ -8,8 +8,6 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-  chakra,
-  useColorModeValue,
 } from '@chakra-ui/react'
 import ParsedContent from '../../utils/ParsedContent'
 
