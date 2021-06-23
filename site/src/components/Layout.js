@@ -24,13 +24,15 @@ export const Layout = ({ children, page, type = 'page', location }) => {
   return (
     <>
       <Helmet>
-        <script
-          id="Cookiebot"
-          src="https://consent.cookiebot.com/uc.js"
-          data-cbid={process.env.GATSBY_CBID}
-          type="text/javascript"
-          async
-        ></script>
+        {process.env.GATSBY_CBID && (
+          <script
+            id="Cookiebot"
+            src="https://consent.cookiebot.com/uc.js"
+            data-cbid={process.env.GATSBY_CBID}
+            type="text/javascript"
+            async
+          ></script>
+        )}
       </Helmet>
       <Grommet theme={grommetStyles}>
         <Global styles={globalStyles(theme)} />

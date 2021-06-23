@@ -27,7 +27,7 @@ const Page = ({ page, ctx, location }) => {
   } = page
   const cookiesRef = useRef(null)
   useEffect(() => {
-    if (cookiesRef.current) {
+    if (cookiesRef.current && process.env.GATSBY_CBID) {
       const script = document.createElement('script')
       script.id = 'CookieDeclaration'
       script.async = true
@@ -86,7 +86,7 @@ const Page = ({ page, ctx, location }) => {
             }
           })}
 
-        {slug === 'privacy-policy' && (
+        {slug === 'privacy-policy' && process.env.GATSBY_CBID && (
           <SimpleContentBlock
             title="Cookie Policy and Details"
             anchor="cookie-details"

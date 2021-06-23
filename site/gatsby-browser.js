@@ -8,26 +8,28 @@ const Wrapper = (props) => {
   console.log(locationRef)
   React.useEffect(() => {
     console.log('wrapper useeffect')
-    window.addEventListener(
-      'CookiebotOnAccept',
-      function () {
-        console.log(window.Cookiebot.consent)
-        if (window.Cookiebot.consent.statistics) {
-          //Execute code that sets statistics cookies
-          const pagePath = locationRef.current
-            ? locationRef.current.pathname +
-              locationRef.current.search +
-              locationRef.current.hash
-            : undefined
-          setTimeout(() => {
-            console.log(typeof window.gtag)
-            if (typeof window.gtag === 'function')
-              window.gtag(`event`, `page_view`, { page_path: pagePath })
-          }, 500)
-        }
-      },
-      false
-    )
+    if (process.env.GATSBY_CBID) {
+      window.addEventListener(
+        'CookiebotOnAccept',
+        function () {
+          console.log(window.Cookiebot.consent)
+          if (window.Cookiebot.consent.statistics) {
+            //Execute code that sets statistics cookies
+            const pagePath = locationRef.current
+              ? locationRef.current.pathname +
+                locationRef.current.search +
+                locationRef.current.hash
+              : undefined
+            setTimeout(() => {
+              console.log(typeof window.gtag)
+              if (typeof window.gtag === 'function')
+                window.gtag(`event`, `page_view`, { page_path: pagePath })
+            }, 500)
+          }
+        },
+        false
+      )
+    }
   }, [])
   return <>{props.children}</>
 }
