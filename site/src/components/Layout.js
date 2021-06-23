@@ -38,6 +38,9 @@ export const Layout = ({ children, page, type = 'page', location }) => {
         <Global styles={globalStyles(theme)} />
         <Box
           sx={{
+            minHeight: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
             '&.fullWidth': {
               '.mainContainer': {
                 maxWidth: `100%`,

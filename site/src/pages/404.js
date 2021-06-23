@@ -6,7 +6,7 @@ import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
 const NotFoundPage = ({ location }) => (
   <Layout location={{ location }} page="404">
     <Seo title="404: Not found" />
-    <article sx={{ variant: 'page404' }}>
+    <article sx={{ variant: 'page404', textAlign: 'center' }}>
       <h1 sx={{ variant: 'title.page' }}>404</h1>
       <div className="entry-content">
         <p>That page can't be found.</p>

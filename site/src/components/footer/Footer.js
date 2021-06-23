@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 import { footerStyles } from '../../styles'
 import { socialStyles } from '../../styles'
 export const Footer = () => (
-  <footer sx={{ ...footerStyles }}>
+  <footer sx={{ ...footerStyles, mt: 'auto' }}>
     <Container sx={{ py: 0 }}>
       <FooterContent />
       <Box className="inverse">
