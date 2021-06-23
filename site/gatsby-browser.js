@@ -15,7 +15,7 @@ const Wrapper = (props) => {
         if (window.Cookiebot.consent.statistics) {
           //Execute code that sets statistics cookies
           const pagePath = locationRef.current
-            ? locationRef.currentn.pathname +
+            ? locationRef.current.pathname +
               locationRef.current.search +
               locationRef.current.hash
             : undefined
