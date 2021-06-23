@@ -104,10 +104,18 @@ export const AccordionBlock = ({
                   className="text-lg font-semibold text-white rounded-b-lg "
                   py={10}
                   px={6}
+                  sx={{
+                    a: {
+                      color: 'inherit',
+                      textDecoration: 'underline',
+                    },
+                    'a:hover': {
+                      color: 'inherit',
+                    },
+                  }}
                   bgGradient="linear(to-r,primary, secondary)"
-                >
-                  {answer}
-                </AccordionPanel>
+                  dangerouslySetInnerHTML={{ __html: answer }}
+                ></AccordionPanel>
               </AccordionItem>
             )
           })}
