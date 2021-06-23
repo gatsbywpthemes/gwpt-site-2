@@ -45,7 +45,7 @@ export const PricingBlock = ({
   }
 
   const Paddle = window.Paddle
-
+  console.log(content)
   return (
     <Box
       as="section"
@@ -138,7 +138,7 @@ export const PricingBlock = ({
                       <div className="text-sm">excl. VAT</div>
                     </Box>
                   </Box>
-                  <List pt={6}>
+                  <List pt={6} px={0} mx={0}>
                     {features?.map((feature) => {
                       const { title, tooltip } = feature
 

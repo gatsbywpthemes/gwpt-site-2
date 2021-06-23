@@ -28,5 +28,10 @@ export default {
   },
   '.intro': {
     pb: 50,
+    ul: {
+      maxWidth: 'l',
+      mx: 'auto',
+      pl: 'xl',
+    },
   },
 }

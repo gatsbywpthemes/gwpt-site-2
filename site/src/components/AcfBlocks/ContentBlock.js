@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx, Box, Container } from "theme-ui"
-import { graphql } from "gatsby"
-import Button from "./Button"
-import ParsedContent from "../../utils/ParsedContent"
-import contentBlockStyles from "../../styles/acfBlocksStyles/contentBlockStyles"
-import sectionsStyles from "../../styles/acfBlocksStyles/sectionsStyles"
+import { jsx, Box, Container } from 'theme-ui'
+import { graphql } from 'gatsby'
+import Button from './Button'
+import ParsedContent from '../../utils/ParsedContent'
+import contentBlockStyles from '../../styles/acfBlocksStyles/contentBlockStyles'
+import sectionsStyles from '../../styles/acfBlocksStyles/sectionsStyles'
 
 export const fragment = graphql`
   fragment contentBlockFragment on WpPage_Flexlayouts_FlexibleLayouts_ContentBlock {
@@ -41,7 +41,7 @@ export const ContentBlock = ({
     <Box
       as="section"
       id={anchor}
-      className={`${cssclass || ""} contentBlock`}
+      className={`${cssclass || ''} contentBlock`}
       sx={{
         ...margins,
         ...sectionsStyles,
@@ -52,7 +52,16 @@ export const ContentBlock = ({
       <Container className="container">
         {title && <h2 dangerouslySetInnerHTML={{ __html: title }} />}
         {content && (
-          <Box className="content">
+          <Box
+            className="content"
+            sx={{
+              ul: {
+                maxWidth: 'l',
+                mx: 'auto',
+                pl: 'xl',
+              },
+            }}
+          >
             <ParsedContent content={content} />
           </Box>
         )}
