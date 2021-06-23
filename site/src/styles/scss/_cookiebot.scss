@@ -46,7 +46,8 @@ div.CybotCookiebotDialogBodyLevelButtonWrapper {
   align-items: center;
 }
 div#CybotCookiebotDialog .CybotCookiebotDialogBodyButton {
-  background: #8919f8;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px;
   border: none;
   height: 32px;
   line-height: 32px;
@@ -90,13 +91,12 @@ div#CybotCookiebotDialog
     var(--theme-ui-colors-primary, rgb(137, 25, 248)),
     var(--theme-ui-colors-pink, rgb(230, 74, 145))
   );
+  box-shadow: none;
   order: 1;
 }
 
 div#CybotCookiebotDialog
   #CybotCookiebotDialogBodyLevelButtonLevelOptinDeclineAll {
-  background: transparent;
-  box-shadow: inset 0 0 0 1px;
   order: -1;
 }
 
