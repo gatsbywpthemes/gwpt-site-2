@@ -37,7 +37,7 @@ export const SubscribeBlock = ({
   const [msg, setMsg] = useState()
   const handleSubmit = (e) => {
     e.preventDefault()
-    addToMailchimp(email, firstName).then((data) => {
+    addToMailchimp(email, { FNAME: firstName }).then((data) => {
       console.log('data', data)
       return data.result === 'success'
         ? setMsg(data.msg)
