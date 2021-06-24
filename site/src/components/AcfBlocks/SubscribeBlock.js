@@ -72,26 +72,30 @@ export const SubscribeBlock = ({
             msg
           ) : (
             <form onSubmit={handleSubmit}>
-              <Flex>
-                <Input
-                  placeholder="firstName"
-                  name="firstname"
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                />
-                <Input
-                  placeholder="Email address"
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={handleChange}
-                  required
-                  sx={{ borderRadius: '5px 0 0 5px', color: 'nlInputColor' }}
-                />
+              <div sx={['block', 'flex']}>
+                <Flex>
+                  <Input
+                    placeholder="firstName"
+                    name="firstname"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    required
+                    sx={{ mr: 10, color: 'nlInputColor' }}
+                  />
+                  <Input
+                    placeholder="Email address"
+                    name="email"
+                    type="email"
+                    value={email}
+                    onChange={handleChange}
+                    required
+                    sx={{ mr: 10, color: 'nlInputColor' }}
+                  />
+                </Flex>
+
                 <button type="submit">Subscribe</button>
-              </Flex>
+              </div>
             </form>
           )}
         </Flex>
