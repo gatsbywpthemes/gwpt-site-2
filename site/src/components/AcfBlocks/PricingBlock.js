@@ -45,7 +45,7 @@ export const PricingBlock = ({
   }
 
   const Paddle = window.Paddle
-  console.log(content)
+
   return (
     <Box
       as="section"

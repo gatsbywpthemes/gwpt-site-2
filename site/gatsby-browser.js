@@ -5,14 +5,11 @@ const React = require('react')
 
 const Wrapper = (props) => {
   const locationRef = React.useRef(props.location)
-  console.log(locationRef)
   React.useEffect(() => {
-    console.log('wrapper useeffect')
     if (process.env.GATSBY_CBID) {
       window.addEventListener(
         'CookiebotOnAccept',
         function () {
-          console.log(window.Cookiebot.consent)
           if (window.Cookiebot.consent.statistics) {
             //Execute code that sets statistics cookies
             const pagePath = locationRef.current
@@ -21,7 +18,6 @@ const Wrapper = (props) => {
                 locationRef.current.hash
               : undefined
             setTimeout(() => {
-              console.log(typeof window.gtag)
               if (typeof window.gtag === 'function')
                 window.gtag(`event`, `page_view`, { page_path: pagePath })
             }, 500)
