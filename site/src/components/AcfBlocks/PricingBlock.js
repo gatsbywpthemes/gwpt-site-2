@@ -93,8 +93,8 @@ export const PricingBlock = ({
               features,
               productId,
             } = pricingTable
-            const packClass = title.includes('Core') ? 'core' : 'pro'
-            const bgGradient = title.includes('Core')
+            const packClass = title.includes('Base') ? 'base' : 'pro'
+            const bgGradient = title.includes('Base')
               ? 'linear(to-t, primary, secondary)'
               : 'linear(to-t, pink, yellow)'
 
@@ -134,7 +134,8 @@ export const PricingBlock = ({
                       </h3>
                     </Tooltip>
                     <Box className="text-3xl font-bold text-white">
-                      {price}$<span className="text-lg font-light">/Year</span>
+                      ${price}
+                      <span className="text-lg font-light">/Year</span>
                       <div className="text-sm">excl. VAT</div>
                     </Box>
                   </Box>
