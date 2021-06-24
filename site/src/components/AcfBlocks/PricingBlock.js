@@ -101,6 +101,7 @@ export const PricingBlock = ({
             const openCheckout = () => {
               Paddle.Checkout.open({
                 product: productId,
+                locale: 'en',
               })
             }
             return (
