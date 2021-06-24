@@ -32,12 +32,13 @@ export const SubscribeBlock = ({
     mt: marginTop,
     mb: marginBottom,
   }
-
+  const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
   const [msg, setMsg] = useState()
   const handleSubmit = (e) => {
     e.preventDefault()
-    addToMailchimp(email).then((data) => {
+    addToMailchimp(email, firstName).then((data) => {
+      console.log('data', data)
       return data.result === 'success'
         ? setMsg(data.msg)
         : setMsg('This email has already subscribed, try with another one')
@@ -72,6 +73,14 @@ export const SubscribeBlock = ({
           ) : (
             <form onSubmit={handleSubmit}>
               <Flex>
+                <Input
+                  placeholder="firstName"
+                  name="firstname"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                />
                 <Input
                   placeholder="Email address"
                   name="email"
