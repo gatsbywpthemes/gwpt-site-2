@@ -165,7 +165,7 @@ export const PricingBlock = ({
                     })}
                   </List>
 
-                  <Box
+                  {/* <Box
                     onClick={openCheckout}
                     transition="all .4s ease-in-out"
                     className="inline-block py-3 text-base font-bold text-white uppercase rounded-full shadow-lg cursor-pointer hover:shadow-2xl px-9 hover:text-white"
@@ -177,6 +177,12 @@ export const PricingBlock = ({
                     }}
                   >
                     Buy Now
+                  </Box> */}
+                  <Box
+                    className="inline-block py-3 text-base font-bold text-white uppercase rounded-full shadow-lg px-9 hover:text-white"
+                    bgGradient={bgGradient}
+                  >
+                    Available on the 30th June!
                   </Box>
                 </VStack>
               </Box>
