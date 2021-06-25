@@ -75,7 +75,7 @@ export const SubscribeBlock = ({
               <div sx={['block', 'flex']}>
                 <Flex>
                   <Input
-                    placeholder="firstName"
+                    placeholder="first name"
                     name="firstname"
                     type="text"
                     value={firstName}
