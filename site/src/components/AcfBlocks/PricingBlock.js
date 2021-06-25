@@ -182,7 +182,7 @@ export const PricingBlock = ({
                     className="inline-block py-3 text-base font-bold text-white uppercase rounded-full shadow-lg px-9 hover:text-white"
                     bgGradient={bgGradient}
                   >
-                    Available on the 30th June!
+                    Available on June the 30th!
                   </Box>
                 </VStack>
               </Box>
