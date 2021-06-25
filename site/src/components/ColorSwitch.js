@@ -17,7 +17,9 @@ export const ColorSwitch = ({ ...props }) => {
       <Box
         sx={{
           color: 'light',
-          mt: [8, 45, 8],
+          position: 'relative',
+          top: [8, 45, 8],
+          zIndex: 0,
 
           cursor: 'pointer',
         }}

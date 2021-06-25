@@ -30,7 +30,7 @@ export const SlideSidebar = (props) => {
         a11yTitle="Open navigation menu"
         onClick={openMenu}
         focusIndicator={false}
-        className={openClass ? 'btn-menu-opened' : 'btn-menu-closing'}
+        className={`${openClass ? 'btn-menu-opened' : 'btn-menu-closing'} z-10`}
         sx={{
           variant: `buttons.hamburger`,
         }}

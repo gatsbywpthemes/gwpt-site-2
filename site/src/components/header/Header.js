@@ -62,17 +62,17 @@ export const Header = () => {
         <SlideSidebar
           sx={{
             // width: [`50%`, `50%`, `33%`],
-            display: [`flex`, `none`, `none`],
+            display: [`flex`, `flex`, `none`],
             justifyContent: `flex-end`,
             position: 'relative',
-            top: -70,
-            right: -10,
+            top: [-80, -40],
+            right: [-10, -30],
           }}
         />
         <Menu
           menuName="main"
           orientation="horizontal"
-          sx={{ display: ['none', 'block', 'block'], mr: [0, 20, 0] }}
+          sx={{ display: ['none', 'none', 'block'], mr: [0, 20, 0] }}
         />
       </Container>
 
