@@ -28,6 +28,7 @@ export const Footer = () => (
         }}
       >
         <Link to="/terms-and-conditions">Terms & Conditions</Link>
+        <Link to="/support-terms-of-use">Support terms of use</Link>
         <Link to="/privacy-policy">Privacy Policy</Link>
         <a href="mailto:contact@gatsbywpthemes.com" target="_blanck">
           Contact Us
