@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Input } from 'theme-ui'
+import { jsx, Box, Input } from 'theme-ui'
 import { useState } from 'react'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
-import { widgetStyles } from '../../styles'
 import subscribeBlockStyles from '../../styles/acfBlocksStyles/subscribeBlockStyles'
 
 export const Newsletter = (props) => {
