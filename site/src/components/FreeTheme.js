@@ -9,6 +9,7 @@ export const FreeTheme = () => {
         maxWidth: '1100px',
         padding: '40px 20px',
         borderRadius: '20px',
+        marginBottom: '40px',
       }}
     >
       <h3
