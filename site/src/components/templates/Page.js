@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import { jsx, Container } from 'theme-ui'
 import { Layout } from '../Layout'
 import { Seo } from '@gatsbywpthemes/gatsby-plugin-wp-seo'
+import { FreeTheme } from '../FreeTheme'
 
 import {
   ButtonBlock,
@@ -56,6 +57,7 @@ const Page = ({ page, ctx, location }) => {
         }
       />
       <Container className="mainContainer">
+        {isFrontPage && <FreeTheme />}
         {flexibleLayouts &&
           flexibleLayouts.length > 0 &&
           flexibleLayouts.map((block, index) => {

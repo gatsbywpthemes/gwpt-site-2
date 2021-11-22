@@ -1,15 +1,15 @@
 const gradientButtonStyle = {
-  fontSize: "xs",
-  letterSpacing: "wider",
-  borderRadius: "full",
-  color: "white",
-  textTransform: "uppercase",
-  transition: "all .4s",
-  boxShadow: "lg",
+  fontSize: 'xs',
+  letterSpacing: 'wider',
+  borderRadius: 'full',
+  color: 'white',
+  textTransform: 'uppercase',
+  transition: 'all .4s',
+  boxShadow: 'lg',
   px: 6,
   _hover: {
-    transform: "translateY(-3px)",
-    boxShadow: "hover",
+    transform: 'translateY(-3px)',
+    boxShadow: 'hover',
   },
 }
 const Button = {
@@ -19,12 +19,12 @@ const Button = {
       ...gradientButtonStyle,
     },
     gradientPurple: {
-      backgroundImage: `linear-gradient(60deg, tomato, #c725A3)`,
+      backgroundImage: `linear-gradient(60deg, rgb(137, 25, 248), #c725A3)`,
       ...gradientButtonStyle,
     },
   },
   defaultProps: {
-    variant: "gradientPurple",
+    variant: 'gradientPurple',
   },
 }
 
