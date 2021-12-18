@@ -15,6 +15,10 @@ module.exports = {
         name: 'twitter',
         url: 'https://twitter.com/gatsby_wp',
       },
+      {
+        name: 'discord',
+        url: 'https://discord.gg/kcHJpfNQ4H',
+      },
     ],
   },
   plugins: [
